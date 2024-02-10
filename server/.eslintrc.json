@@ -16,7 +16,9 @@
         "sourceType": "module"
     },
     "rules": {
+        "@typescript-eslint/no-throw-literal": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": "off",
         "prettier/prettier": "error",
         "camelcase": "off",
         "import/no-unresolved": "error",

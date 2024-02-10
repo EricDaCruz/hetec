@@ -1,4 +1,5 @@
-import { UsersRepositoryInMemory } from "../../src/modules/account/repositories/UsersRepositoryInMemory";
+import { AppError } from "../../src/errors/AppError";
+import { UsersRepositoryInMemory } from "../../src/modules/account/repositories/in-memory/UsersRepositoryInMemory";
 import { CreateUserUseCase } from "../../src/modules/account/useCases/CreateUserUseCase";
 
 let createUserUseCase: CreateUserUseCase;
@@ -40,7 +41,7 @@ describe("Create User", () => {
 
             await createUserUseCase.execute(user);
             await createUserUseCase.execute(user);
-        }).rejects.toBeInstanceOf(Error);
+        }).rejects.toBeInstanceOf(AppError);
     });
 
     it("should not be able to create a new user with username exists", async () => {
@@ -55,6 +56,6 @@ describe("Create User", () => {
 
             await createUserUseCase.execute(user);
             await createUserUseCase.execute(user);
-        }).rejects.toBeInstanceOf(Error);
+        }).rejects.toBeInstanceOf(AppError);
     });
 });

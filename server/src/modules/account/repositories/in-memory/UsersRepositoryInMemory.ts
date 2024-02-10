@@ -1,6 +1,6 @@
-import { type ICreateUserDTO } from "../dtos/ICreateUserDTO";
-import { User } from "../models/User";
-import { type IUsersRepository } from "./IUsersRepository";
+import { type ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { User } from "../../models/User";
+import { type IUsersRepository } from "../IUsersRepository";
 
 class UsersRepositoryInMemory implements IUsersRepository {
     users: User[] = [];

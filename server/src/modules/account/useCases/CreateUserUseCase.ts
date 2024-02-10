@@ -1,3 +1,4 @@
+import { AppError } from "../../../errors/AppError";
 import { type ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { type IUsersRepository } from "../repositories/IUsersRepository";
 
@@ -13,7 +14,7 @@ class CreateUserUseCase {
             await this.usersRepository.findByUsername(data.username);
 
         if (userEmailAlreadyExists || userUsernameAlreadyExists) {
-            throw new Error("User already exists");
+            throw new AppError("User already exists");
         }
 
         await this.usersRepository.create(data);
