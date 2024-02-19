@@ -8,6 +8,7 @@ interface IUsersRepository {
     findByUsername: (username: string) => Promise<User>;
     findById: (id: string) => Promise<User>;
     update: (data: IUpdateUserDTO) => Promise<void>;
+    delete: (id: string) => Promise<void>;
 }
 
 export type { IUsersRepository };
