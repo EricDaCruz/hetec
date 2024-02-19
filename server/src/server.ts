@@ -6,6 +6,7 @@ import express, {
 
 import "express-async-errors";
 import { AppError } from "./errors/AppError";
+import { routes } from "./routes";
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.use(
         });
     },
 );
+
+app.use(routes);
 
 app.get("/", (_, res) => {
     return res.json({ message: "Hello World" });
