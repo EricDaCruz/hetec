@@ -1,6 +1,6 @@
-import { AppError } from "../../../errors/AppError";
-import { type ICreateUserDTO } from "../dtos/ICreateUserDTO";
-import { type IUsersRepository } from "../repositories/IUsersRepository";
+import { AppError } from "../../../../errors/AppError";
+import { type ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { type IUsersRepository } from "../../repositories/IUsersRepository";
 
 class CreateUserUseCase {
     constructor(private readonly usersRepository: IUsersRepository) {}
