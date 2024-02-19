@@ -1,4 +1,5 @@
 import { type ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { type IUpdateUserDTO } from "../../dtos/IUpdateUserDTO";
 import { User } from "../../models/User";
 import { type IUsersRepository } from "../IUsersRepository";
 
@@ -24,6 +25,17 @@ class UsersRepositoryInMemory implements IUsersRepository {
     async findByUsername(username: string): Promise<User> {
         const user = this.users.find((user) => user.username === username);
         return user;
+    }
+
+    async findById(id: string): Promise<User> {
+        const user = this.users.find((user) => user.id === id);
+        return user;
+    }
+
+    async update(data: IUpdateUserDTO): Promise<void> {
+        const user = this.users.find((user) => user.id === data.id);
+
+        Object.assign(user, data);
     }
 }
 
