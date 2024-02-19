@@ -37,9 +37,6 @@ describe("Update User", () => {
             updatedData.email,
         );
 
-        console.log(userUpdated);
-        console.log(user);
-
         expect(userUpdated.email).not.toEqual(data.email);
     });
 });
