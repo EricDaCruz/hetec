@@ -1,7 +1,7 @@
 import { AppError } from "../../src/errors/AppError";
 import { UsersRepositoryInMemory } from "../../src/modules/account/repositories/in-memory/UsersRepositoryInMemory";
-import { CreateUserUseCase } from "../../src/modules/account/useCases/createUserUseCase/CreateUserUseCase";
-import { DeleteUserUseCase } from "../../src/modules/account/useCases/deleteUserUseCase/DeleteUserUseCase";
+import { CreateUserUseCase } from "../../src/modules/account/useCases/createUser/CreateUserUseCase";
+import { DeleteUserUseCase } from "../../src/modules/account/useCases/deleteUser/DeleteUserUseCase";
 
 let deleteUserUseCase: DeleteUserUseCase;
 let createUserUseCase: CreateUserUseCase;

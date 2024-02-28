@@ -1,6 +1,6 @@
 import { AppError } from "../../src/errors/AppError";
 import { UsersRepositoryInMemory } from "../../src/modules/account/repositories/in-memory/UsersRepositoryInMemory";
-import { CreateUserUseCase } from "../../src/modules/account/useCases/createUserUseCase/CreateUserUseCase";
+import { CreateUserUseCase } from "../../src/modules/account/useCases/createUser/CreateUserUseCase";
 import { GetUserByIdUseCase } from "../../src/modules/account/useCases/getUserById/GetUserByIdUseCase";
 
 let getUserByIdUseCase: GetUserByIdUseCase;

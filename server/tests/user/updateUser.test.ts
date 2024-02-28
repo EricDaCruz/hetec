@@ -1,5 +1,5 @@
 import { UsersRepositoryInMemory } from "../../src/modules/account/repositories/in-memory/UsersRepositoryInMemory";
-import { CreateUserUseCase } from "../../src/modules/account/useCases/createUserUseCase/CreateUserUseCase";
+import { CreateUserUseCase } from "../../src/modules/account/useCases/createUser/CreateUserUseCase";
 import { UpdateUserUseCase } from "../../src/modules/account/useCases/updateUser/UpdateUserUsecase";
 
 let updateUserUseCase: UpdateUserUseCase;
