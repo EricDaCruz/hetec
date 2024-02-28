@@ -1,10 +1,17 @@
 import { type Request, type Response } from "express";
+import { container } from "tsyringe";
+
+import { type ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController {
-    handle(request: Request, response: Response): Response {
-        const {} = request.body;
+    async handle(request: Request, response: Response): Promise<Response> {
+        const data: ICreateUserDTO = request.body;
+        const createUserUseCase = container.resolve(CreateUserUseCase);
 
-        return response.send();
+        await createUserUseCase.execute(data);
+
+        return response.status(201).send();
     }
 }
 
