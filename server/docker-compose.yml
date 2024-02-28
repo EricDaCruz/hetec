@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    database_hetec:
+        image: mysql
+        container_name: database_hetec
+        restart: always
+        ports:
+            - "3306:3306"
+        expose:
+            - 3306
+        environment:
+            - MYSQL_DATABASE=hetec
+            - MYSQL_USER=user
+            - MYSQL_PASSWORD=123456
+            - MYSQL_ROOT_PASSWORD=123456
+        volumes:
+            - mysql:/data/postgres
+
+volumes:
+    mysql:
+        driver: local
