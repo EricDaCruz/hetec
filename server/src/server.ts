@@ -1,3 +1,5 @@
+import "reflect-metadata";
+
 import express, {
     type NextFunction,
     type Request,
@@ -8,7 +10,12 @@ import "express-async-errors";
 import { AppError } from "./errors/AppError";
 import { routes } from "./routes";
 
+import "../prisma/db/index";
+import "./shared/container";
+
 const app = express();
+
+app.use(express.json());
 
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
