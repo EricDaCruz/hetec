@@ -53,8 +53,27 @@ class UsersRepository implements IUsersRepository {
         return user;
     }
 
-    async update(data: IUpdateUserDTO): Promise<void> {
-        throw new Error("Method not implemented.");
+    async update({
+        id,
+        email,
+        name,
+        username,
+        password,
+        phone,
+    }: IUpdateUserDTO): Promise<void> {
+        await prisma.user.update({
+            data: {
+                name,
+                email,
+                password,
+                phone,
+                username,
+                updated_at: new Date(),
+            },
+            where: {
+                id,
+            },
+        });
     }
 
     async delete(id: string): Promise<void> {

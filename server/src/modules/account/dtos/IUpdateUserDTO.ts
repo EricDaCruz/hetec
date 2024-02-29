@@ -5,5 +5,4 @@ export interface IUpdateUserDTO {
     phone?: string;
     username?: string;
     password?: string;
-    photo_url?: string;
 }
