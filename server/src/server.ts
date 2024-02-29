@@ -17,6 +17,12 @@ const app = express();
 
 app.use(express.json());
 
+app.use(routes);
+
+app.get("/", (_, res) => {
+    return res.json({ message: "Hello World" });
+});
+
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
         if (err instanceof AppError) {
@@ -31,12 +37,6 @@ app.use(
         });
     },
 );
-
-app.use(routes);
-
-app.get("/", (_, res) => {
-    return res.json({ message: "Hello World" });
-});
 
 app.listen(3333, () => {
     console.log("🚀 Server running on http://localhost:3333");

@@ -44,7 +44,13 @@ class UsersRepository implements IUsersRepository {
     }
 
     async findById(id: string): Promise<User> {
-        throw new Error("Method not implemented.");
+        const user = await prisma.user.findFirst({
+            where: {
+                id,
+            },
+        });
+
+        return user;
     }
 
     async update(data: IUpdateUserDTO): Promise<void> {
@@ -52,7 +58,11 @@ class UsersRepository implements IUsersRepository {
     }
 
     async delete(id: string): Promise<void> {
-        throw new Error("Method not implemented.");
+        await prisma.user.delete({
+            where: {
+                id,
+            },
+        });
     }
 }
 
